@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Blu petrolio esatto dal logo Top Quality Vending #2F658B - RGB: 47, 101, 139 */
+    --primary: 205 49% 36%; /* #2F658B */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - lighter version of primary */
+    --secondary: 205 49% 92%;
+    --secondary-foreground: 205 49% 25%;
+    
+    /* Accent - same as primary for consistency */
+    --accent: 205 49% 36%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Backgrounds - Pure White theme */
+    --background: 0 0% 100%;
+    --background-alt: 205 30% 97%;
+    --background-dark: 205 49% 36%;
+    --foreground: 210 20% 15%;
+    
+    /* Status bar - deeper navy for strong visual separation */
+    --status-bar: 210 45% 18%;
+    --status-bar-foreground: 0 0% 100%;
+    
+    /* Card - White with subtle styling */
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+    
+    /* Muted */
+    --muted: 205 20% 95%;
+    --muted-foreground: 210 15% 45%;
+    
+    /* Borders - subtle primary tint */
+    --border: 205 30% 88%;
+    --input: 205 30% 92%;
+    --ring: 205 49% 36%;
+    
+    /* Status Colors - using primary variations */
+    --success: 205 49% 36%;
+    --success-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Hover States */
+    --hover-card: 205 30% 96%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* Shadows - primary tinted */
+    --shadow-card: 0 4px 20px -1px hsla(205, 49%, 36%, 0.08);
+    --shadow-card-hover: 0 20px 40px -10px hsla(205, 49%, 36%, 0.15);
+    --shadow-navbar: 0 1px 3px hsla(205, 49%, 36%, 0.1);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 20% 15%;
+    --sidebar-primary: 205 49% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 205 30% 96%;
+    --sidebar-accent-foreground: 210 20% 15%;
+    --sidebar-border: 205 30% 88%;
+    --sidebar-ring: 205 49% 36%;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-foreground;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-semibold leading-snug text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl font-semibold text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  .font-display {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Clean card styles - white/azure theme */
+  .card-clean {
+    @apply bg-card border border-border rounded-2xl shadow-sm;
+  }
+
+  .card-azure {
+    @apply bg-primary/5 border border-primary/20 rounded-2xl;
+  }
+
+  .card-outline {
+    @apply bg-transparent border-2 border-primary/30 rounded-2xl;
+  }
+
+  /* Glass effect - light version */
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-primary/10;
+  }
+
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-xl border border-primary/10 rounded-2xl shadow-sm;
+  }
+
+  /* Button glow - primary */
+  .btn-glow-blue {
+    box-shadow: 0 4px 20px 0 hsla(205, 49%, 36%, 0.3);
+  }
+
+  .btn-glow-blue:hover {
+    box-shadow: 0 6px 30px 0 hsla(205, 49%, 36%, 0.4);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  /* Interactive states */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 20px 40px -10px hsla(205, 49%, 36%, 0.15);
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 ease-out;
+  }
+
+  .hover-scale:hover {
+    @apply scale-[1.03];
+  }
+
+  /* Text gradient - primary */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(205, 49%, 36%) 0%, hsl(205, 49%, 50%) 100%);
+  }
+
+  /* Background patterns - light theme */
+  .bg-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsla(205, 49%, 36%, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsla(205, 49%, 36%, 0.02) 0%, transparent 50%);
+  }
+
+  .bg-pattern-subtle {
+    background-image: 
+      radial-gradient(circle at 50% 0%, hsla(205, 49%, 36%, 0.04) 0%, transparent 40%);
+  }
+
+  /* Dots pattern for backgrounds */
+  .bg-dots {
+    background-image: radial-gradient(circle, hsla(205, 49%, 36%, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Grid pattern */
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsla(205, 49%, 36%, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(205, 49%, 36%, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Diagonal lines pattern */
+  .bg-lines {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      hsla(205, 49%, 36%, 0.02) 10px,
+      hsla(205, 49%, 36%, 0.02) 20px
+    );
+  }
+
+  /* Primary background section */
+  .bg-azure {
+    background: linear-gradient(135deg, hsl(205, 49%, 36%) 0%, hsl(205, 49%, 42%) 100%);
+  }
+
+  .bg-azure-light {
+    background: linear-gradient(180deg, hsl(205, 30%, 97%) 0%, hsl(205, 30%, 94%) 100%);
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Hide scrollbar */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Scroll snap */
+  .snap-x {
+    scroll-snap-type: x mandatory;
+  }
+
+  .snap-center {
+    scroll-snap-align: center;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
