@@ -1,45 +1,23 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo-top-quality.png";
-
-const zoneServite = [
-  "Bari e provincia",
-  "Taranto",
-  "Lecce", 
-  "Foggia",
-  "Brindisi",
-  "BAT (Barletta-Andria-Trani)"
-];
 
 export default function Footer() {
   return (
     <footer className="bg-primary pt-10 pb-6">
       <div className="section-container">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
-          {/* Brand - Centered */}
-          <div className="lg:col-span-1 flex flex-col items-center text-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {/* Brand */}
+          <div className="flex flex-col items-center text-center">
             <div className="mb-3">
               <img src={logo} alt="Top Quality Vending - Distributori Automatici Bari Puglia" className="h-10 w-auto" />
             </div>
             <p className="text-white/60 mb-3 text-sm">Distributori Automatici H24</p>
             <div className="flex gap-2">
-              <a href="#" className="w-8 h-8 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Instagram Top Quality Vending">
-                <Instagram size={16} className="text-white" />
+              <a href="#" className="w-8 h-8 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="LinkedIn Top Quality Vending">
+                <Linkedin size={16} className="text-white" />
               </a>
             </div>
-          </div>
-
-          {/* Zone Servite */}
-          <div>
-            <h4 className="font-semibold text-white mb-3 text-sm">Zone Servite</h4>
-            <ul className="space-y-1.5">
-              {zoneServite.map((zona) => (
-                <li key={zona} className="text-white/60 text-sm flex items-center gap-1.5">
-                  <MapPin size={10} className="text-white/40" />
-                  {zona}
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Quick Links */}
@@ -59,11 +37,11 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-white/60 text-sm">
                 <Mail size={14} className="text-white" />
-                info@topqualityvending.it
+                topquality284@gmail.com
               </li>
               <li className="flex items-center gap-2 text-white/60 text-sm">
                 <Phone size={14} className="text-white" />
-                +39 XXX XXX XXXX
+                +39 351 495 3432
               </li>
               <li className="flex items-center gap-2 text-white/60 text-sm">
                 <MapPin size={14} className="text-white" />

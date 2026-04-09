@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "393662571168";
+  const phoneNumber = "393514953432";
   const message = encodeURIComponent(
     "Ciao! Sono interessato ai vostri distributori automatici. Vorrei ricevere maggiori informazioni sui servizi e un preventivo gratuito. Grazie!"
   );
