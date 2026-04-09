@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Lock, ArrowRight, Loader2 } from "lucide-react";
+import { Check, Lock, ArrowRight, Loader2, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
@@ -105,6 +105,21 @@ export default function ContactSection() {
                 </li>
               ))}
             </ul>
+
+            <div className="space-y-2 mb-4">
+              <a href="mailto:topquality284@gmail.com" className="flex items-center gap-2 text-foreground text-sm hover:text-primary transition-colors">
+                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Mail size={14} className="text-primary" />
+                </div>
+                topquality284@gmail.com
+              </a>
+              <a href="tel:+393514953432" className="flex items-center gap-2 text-foreground text-sm hover:text-primary transition-colors">
+                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Phone size={14} className="text-primary" />
+                </div>
+                +39 351 495 3432
+              </a>
+            </div>
 
             <div className="flex items-center gap-1.5 text-muted-foreground text-xs">
               <Lock size={14} />
