@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://topqualityvending.it/sitemap.xml
+Sitemap: https://www.topqualityvendingh24.com/sitemap.xml
